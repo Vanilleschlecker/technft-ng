@@ -1,0 +1,107 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+@import 'node_modules/@angular/material/theming';
+
+// Plus imports for other components in your app.
+$custom-typography: mat-typography-config($font-family: '"Michroma", sans-serif;');
+@include mat.core($custom-typography);
+
+$primary: (
+  50: #e2e0eb,
+  100: #b7b3cd,
+  200: #8780ab,
+  300: #564d89,
+  400: #322670,
+  500: #0e0057,
+  600: #0c004f,
+  700: #0a0046,
+  800: #08003c,
+  900: #04002c,
+  A100: #6565ff,
+  A200: #3232ff,
+  A400: #0000fe,
+  A700: #0000e5,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: black,
+    A200: black,
+    A400: black,
+    A700: white,
+  )
+);
+
+$secondary: (
+  50: #f4eee2,
+  100: #e3d5b7,
+  200: #d1ba88,
+  300: #bf9e58,
+  400: #b18934,
+  500: #a37410,
+  600: #9b6c0e,
+  700: #91610c,
+  800: #885709,
+  900: #774405,
+  A100: #ffd2a6,
+  A200: #ffb873,
+  A400: #ff9e40,
+  A700: #ff9126,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: black,
+    A200: black,
+    A400: black,
+    A700: white,
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$technft-primary: mat.define-palette($primary);
+$technft-accent: mat.define-palette($secondary);
+
+// The warn palette is optional (defaults to red).
+$technft-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$technft-theme: mat.define-light-theme((
+  color: (
+    primary: $technft-primary,
+    accent: $technft-accent,
+    warn: $technft-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($technft-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+}
+
+@import "toolbar";
