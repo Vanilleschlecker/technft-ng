@@ -11,17 +11,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { MenuComponent } from './menu/menu.component';
-import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LandingPageComponent,
-    MenuComponent,
-    LoginComponent
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,5 @@
-<technft-header (menuClicked)="drawer.toggle()"></technft-header>
+<technft-header></technft-header>
 
-<mat-drawer-container>
-  <mat-drawer #drawer mode="side">
-    <technft-menu></technft-menu>
-  </mat-drawer>
-
-  <div>
-    <router-outlet></router-outlet>
-  </div>
-
-</mat-drawer-container>
+<router-outlet></router-outlet>
 
 <technft-footer></technft-footer>

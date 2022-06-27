@@ -1,3 +1,123 @@
-div {
+.landing {
+  width: 100%;
   min-height: 800px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  padding-top: 100px;
+
+  .flex-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+
+    .flex-item {
+      flex: 1;
+    }
+  }
 }
+
+.landing-overlay {
+  height: 50px;
+  background-color: white;
+  border-top-right-radius: 100%;
+  border-top-left-radius: 100%;
+  margin-top: -50px;
+}
+
+.start-content {
+  min-height: 500px;
+}
+
+// Typing style
+$bg: black;
+$caret-color: white;
+$text-length: 16;
+$animation-time: 4s;
+.typing {
+  position: relative;
+  color: white;
+  &::after {
+    content: "|";
+    position: absolute;
+    right: 0;
+    width: 100%;
+    color: $caret-color;
+    background: $bg;
+    animation: typing $animation-time steps($text-length) forwards,
+    caret 1s infinite;
+  }
+}
+// Animation
+@keyframes typing {
+  to { width: 0 }
+}
+@keyframes caret {
+  50% { color: transparent }
+}
+
+/* SOLAR SYSTEM */
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.solar-system {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orbit {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fafbfC;
+  border-radius: 50%;
+}
+
+.earth-orbit {
+  width: 165px;
+  height: 165px;
+  -webkit-animation: spin 12s linear 0s infinite;
+}
+
+.venus-orbit {
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 7.4s linear 0s infinite;
+}
+
+.mercury-orbit {
+  width: 90px;
+  height: 90px;
+  -webkit-animation: spin 3s linear 0s infinite;
+}
+
+.planet {
+  position: absolute;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #3ff9dc;
+}
+
+.sun {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #ffab91;
+}
+
